@@ -282,14 +282,16 @@ section {
   }
 
   .hero {
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
     gap: 30px;
   }
 
   .card-hero {
-    order: -1;
+    order: 2; /* fica depois do texto */
   }
 
+}
   h1 {
     font-size: 2.2rem;
   }
