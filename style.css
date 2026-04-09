@@ -415,3 +415,35 @@ section {
   transform: translateY(0);
 }
 }
+/* 🎵 BOTÃO DE MÚSICA - FORÇA TOTAL */
+#music-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+
+  background: rgba(30, 10, 10, 0.7);
+  border: 1px solid rgba(255, 120, 120, 0.25);
+
+  color: white;
+  font-size: 22px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  z-index: 9999; /* 🔥 garante que fica acima de tudo */
+
+  cursor: pointer;
+  backdrop-filter: blur(10px);
+
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* mobile feedback */
+#music-btn:active {
+  transform: scale(0.95);
+}
