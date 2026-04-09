@@ -91,6 +91,7 @@ header {
   color: var(--accent-soft);
   font-size: 13px;
   margin-bottom: 22px;
+  text-align: center;
 }
 
 h1 {
@@ -251,7 +252,7 @@ section {
 /* FOOTER */
 .final-box {
   text-align: center;
-  padding: 50px;
+  padding: 30px;
   border-radius: 26px;
 
   background: linear-gradient(
@@ -266,7 +267,7 @@ section {
   /* 🔥 profundidade */
   box-shadow: 0 28px 70px rgba(0, 0, 0, 0.45);
 
-  margin-top: 60px;
+  margin-top: 20px;
 }
 
 .signature {
