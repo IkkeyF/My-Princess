@@ -199,7 +199,7 @@ section {
 }
 
 .box h3::before {
-  content: "♡";
+  content: ♡;
   display: block;
   font-size: 0.7rem;
   letter-spacing: 0.2em;
@@ -282,16 +282,14 @@ section {
   }
 
   .hero {
-    display: flex;
-    flex-direction: column;
+    grid-template-columns: 1fr;
     gap: 30px;
   }
 
   .card-hero {
-    order: 2; /* fica depois do texto */
+    order: -1;
   }
 
-}
   h1 {
     font-size: 2.2rem;
   }
