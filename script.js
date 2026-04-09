@@ -79,7 +79,10 @@ function fadeIn(audio) {
   }, 350); // 🔥 intervalo maior = mais suave
 }
 
-btn.addEventListener("click", () => {
+btn.addEventListener("click", toggleMusic);
+btn.addEventListener("touchstart", toggleMusic); // 🔥 mobile
+
+function toggleMusic() {
   if (!playing) {
     fadeIn(music);
     btn.innerHTML = "🔊";
@@ -89,4 +92,4 @@ btn.addEventListener("click", () => {
     btn.innerHTML = "🎵";
     playing = false;
   }
-});
+};
