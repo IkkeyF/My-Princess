@@ -282,12 +282,13 @@ section {
   }
 
   .hero {
-    grid-template-columns: 1fr;
+    display: flex; /* 🔥 troca grid por flex */
+    flex-direction: column;
     gap: 30px;
   }
 
   .card-hero {
-    order: -1;
+    order: 2; /* 🔥 fica depois do texto */
   }
 
   h1 {
