@@ -43,24 +43,59 @@ body {
   50% { transform: translate(30px, -25px); }
 }
 
-/* CORAÇÕES */
+/* CONTAINER */
 .hearts {
   position: fixed;
   inset: 0;
   pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
 }
 
+/* CORAÇÃO SUTIL */
 .heart {
   position: absolute;
-  bottom: -40px;
-  color: rgba(193, 59, 59, 0.25);
-  animation: rise linear infinite;
+  bottom: -20px;
+
+  font-size: 14px;
+
+  /* 🔥 bem suave */
+  color: rgba(255, 90, 90, 0.12);
+
+  /* glow mínimo */
+  text-shadow: 0 0 6px rgba(255, 80, 80, 0.18);
+
+  opacity: 0;
+  animation: softRise linear forwards;
 }
 
-@keyframes rise {
-  from { transform: translateY(0); opacity: 0; }
-  10% { opacity: 1; }
-  to { transform: translateY(-110vh); opacity: 0; }
+/* MOVIMENTO LEVE */
+@keyframes softRise {
+  0% {
+    transform: translateY(0) translateX(0) scale(0.9);
+    opacity: 0;
+  }
+
+  15% {
+    opacity: 0.6;
+  }
+
+  50% {
+    transform: translateY(-50vh) translateX(10px) scale(1);
+  }
+
+  100% {
+    transform: translateY(-110vh) translateX(-10px) scale(1.1);
+    opacity: 0;
+  }
+}
+
+header,
+section,
+footer,
+.container {
+  position: relative;
+  z-index: 2; /* 🔥 tudo acima dos corações */
 }
 
 /* LAYOUT */
@@ -272,12 +307,38 @@ section {
   box-shadow: 0 28px 70px rgba(0, 0, 0, 0.45);
 
   margin-top: 10px;
-  margin-bottom: 10px;
+  margin-bottom: 10px
 }
 
 .signature {
   margin-top: 10px;
   margin-bottom: 10px;
+}
+
+#music-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+
+  border: 1px solid rgba(255,255,255,0.1);
+  background: rgba(0,0,0,0.4);
+  color: white;
+
+  font-size: 20px;
+  cursor: pointer;
+
+  backdrop-filter: blur(10px);
+  z-index: 10;
+
+  transition: 0.3s;
+}
+
+#music-btn:hover {
+  transform: scale(1.1);
 }
 
 /* 📱 RESPONSIVO REAL */
@@ -326,4 +387,31 @@ section {
   section {
     padding: 70px 0;
   }
+
+  /* estado inicial */
+.final-box {
+  opacity: 0.85;
+  transform: scale(0.98);
+  transition: all 0.8s ease;
+}
+
+/* quando entra em foco */
+.final-box.active {
+  opacity: 1;
+  transform: scale(1);
+  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.6);
+}
+
+/* frase final com impacto */
+.signature {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.8s ease;
+  transition-delay: 0.4s;
+}
+
+.final-box.active .signature {
+  opacity: 1;
+  transform: translateY(0);
+}
 }
